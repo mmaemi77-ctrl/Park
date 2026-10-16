@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#2F6B3A">
+<title>Семейный парк «Зелёная долина»</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800;900&display=swap">
+<style>
+:root{--bg:#FBF7EC;--card:#FFFFFF;--ink:#1F2B1C;--soft:#5F6B58;--green:#2F6B3A;--green2:#4E9A4F;--leaf:#E3F0D8;--orange:#F07A2A;--sun:#FFC83D;--sky:#DDEFFB;--pink:#FFE1D2;--line:#ECE5D2;--r:22px;--shadow:0 10px 30px -14px rgba(47,107,58,.35)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5;padding-bottom:84px}
+a{color:inherit}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+.demo{background:var(--ink);color:#fff;text-align:center;font-size:12.5px;font-weight:700;padding:6px 12px;letter-spacing:.02em}
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,247,236,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:900;font-size:18px;line-height:1.05}
+.logo small{display:block;font-size:11px;font-weight:700;color:var(--soft)}
+.logo .m{width:38px;height:38px;border-radius:12px;background:var(--green);display:grid;place-items:center}
+nav.links{display:none;gap:20px;font-weight:800;font-size:14.5px}
+nav.links a{text-decoration:none}
+nav.links a:hover{color:var(--green)}
+.cta{border:0;border-radius:999px;background:var(--orange);color:#fff;font-weight:900;padding:10px 16px;cursor:pointer;text-decoration:none;white-space:nowrap;box-shadow:0 8px 18px -10px var(--orange)}
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#BFE3F7 0%,#DDF0E0 62%,var(--bg) 100%);padding:28px 0 0}
+.hero h1{font-size:clamp(34px,9vw,58px);line-height:1.02;font-weight:900;letter-spacing:-.02em;max-width:12ch}
+.hero h1 span{color:var(--green)}
+.hero p.lead{margin:12px 0 18px;font-size:17px;color:#334030;max-width:34ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.chip{background:rgba(255,255,255,.8);border-radius:999px;padding:6px 12px;font-size:13.5px;font-weight:800}
+.chip b{color:var(--orange)}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:14px 20px;font-weight:900;font-size:16px;cursor:pointer;text-decoration:none}
+.btn.o{background:var(--orange);color:#fff;box-shadow:0 10px 22px -12px var(--orange)}
+.btn.w{background:#fff;color:var(--green)}
+.scene{display:block;width:100%;height:auto;margin-top:22px}
+section{padding:44px 0 8px;scroll-margin-top:64px}
+.eyebrow{font-size:12.5px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--orange)}
+h2{font-size:clamp(28px,6.5vw,40px);line-height:1.08;font-weight:900;margin:6px 0 8px;letter-spacing:-.01em}
+.sub{color:var(--soft);max-width:46ch;margin-bottom:18px}
+.filters{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px 16px;padding:0 16px}
+.filters::-webkit-scrollbar{display:none}
+.f{flex:none;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-weight:800;font-size:14px;cursor:pointer}
+.f[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+.card{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.pic{height:150px;display:grid;place-items:center;position:relative}
+.pic svg{width:96px;height:96px}
+.tag{position:absolute;left:12px;top:12px;background:#fff;border-radius:999px;font-size:12px;font-weight:900;padding:4px 10px}
+.tag.new{background:var(--orange);color:#fff}
+.cb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.cb h3{font-size:19px;font-weight:900;line-height:1.2}
+.cb p{font-size:14.5px;color:var(--soft)}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:8px}
+.age{font-size:13px;font-weight:800;color:var(--green);background:var(--leaf);padding:4px 10px;border-radius:999px}
+.price{font-size:20px;font-weight:900}
+.tickets{display:grid;gap:12px}
+.tk{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--shadow);display:flex;justify-content:space-between;gap:12px;align-items:center;border:2px solid transparent}
+.tk.vip{border-color:var(--sun);background:linear-gradient(135deg,#FFF8E1,#fff)}
+.tk h3{font-size:18px;font-weight:900}
+.tk p{font-size:14px;color:var(--soft)}
+.tk .price{font-size:24px;white-space:nowrap}
+.promo{display:grid;gap:12px}
+.pr{border-radius:var(--r);padding:20px;position:relative;overflow:hidden}
+.pr h3{font-size:21px;font-weight:900;line-height:1.15;margin-bottom:6px;max-width:18ch}
+.pr p{font-size:14.5px;max-width:34ch}
+.pr .till{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:900;background:rgba(255,255,255,.75);padding:5px 10px;border-radius:999px}
+.pr.a{background:var(--sun)}
+.pr.b{background:var(--pink)}
+.pr.c{background:var(--sky)}
+.bday{background:var(--green);color:#fff;border-radius:28px;padding:24px 18px;margin-top:8px}
+.bday h2{color:#fff}
+.bday .sub{color:#D7EBD3}
+.pk{display:grid;gap:10px;margin-bottom:20px}
+.pk label{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.18);border-radius:18px;padding:14px;cursor:pointer}
+.pk input{margin-top:5px;accent-color:var(--sun);width:18px;height:18px;flex:none}
+.pk label:has(input:checked){border-color:var(--sun);background:rgba(255,200,61,.14)}
+.pk b{display:block;font-size:17px}
+.pk span{font-size:14px;line-height:1.35;color:#D7EBD3}
+.pk em{font-style:normal;font-weight:900;color:var(--sun);white-space:nowrap;margin-left:auto}
+form.req{display:grid;gap:10px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+form.req input,form.req select{width:100%;border:0;border-radius:14px;padding:14px;background:#fff;color:var(--ink);font-size:16px}
+.consent{display:flex;gap:10px;font-size:13px;color:#D7EBD3;align-items:flex-start}
+.consent input{width:18px!important;height:18px;flex:none;margin-top:2px;padding:0!important}
+.consent a{color:#fff}
+form.req .btn{justify-content:center;background:var(--sun);color:var(--ink)}
+.ok{display:none;background:#fff;color:var(--ink);border-radius:18px;padding:18px}
+.ok b{font-size:18px}
+.cafe{display:grid;gap:14px}
+.menu{background:#fff;border-radius:var(--r);padding:8px 18px;box-shadow:var(--shadow)}
+.mi{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.mi:last-child{border-bottom:0}
+.mi b{font-weight:800}
+.mi span{color:var(--soft);font-size:14px;display:block}
+.mi i{font-style:normal;font-weight:900;white-space:nowrap}
+.deliv{background:var(--sky);border-radius:var(--r);padding:20px}
+.deliv h3{font-size:20px;font-weight:900;margin-bottom:6px}
+.deliv p{font-size:14.5px;margin-bottom:14px;color:#2F4150}
+.tg{background:#2AABEE;color:#fff}
+.rev{display:grid;gap:12px}
+.rv{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+.stars{color:var(--sun);letter-spacing:2px;font-size:15px}
+.rv p{margin:8px 0;font-size:15px}
+.rv small{color:var(--soft);font-weight:700}
+.where{display:grid;gap:14px}
+.map{border-radius:var(--r);overflow:hidden;min-height:220px;background:#E7EFD9;position:relative;box-shadow:var(--shadow)}
+.map svg{width:100%;height:100%;display:block}
+.info{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--shadow);display:grid;gap:12px}
+.li{display:flex;gap:12px}
+.li .ic{width:38px;height:38px;border-radius:12px;background:var(--leaf);display:grid;place-items:center;flex:none}
+.li b{display:block}
+.li span{color:var(--soft);font-size:14.5px}
+footer{margin-top:44px;padding:22px 0 26px;border-top:1px solid var(--line);font-size:13px;color:var(--soft)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between}
+.sign b{color:var(--ink)}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));display:flex;gap:8px}
+.dock a{flex:1;justify-content:center;padding:13px 10px;font-size:15px}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:92px;z-index:40;background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-weight:800;font-size:14px;display:none}
+@media (min-width:720px){
+  body{padding-bottom:0}
+  .dock{display:none}
+  nav.links{display:flex}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .tickets,.promo,.rev{grid-template-columns:repeat(3,1fr)}
+  .cafe,.where{grid-template-columns:1.2fr 1fr}
+  .bday{padding:36px}
+  .bwrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+}
+</style>
+</head>
+<body>
+<div class="demo">Демо-страница: так может выглядеть сайт вашего парка</div>
+<header class="top"><div class="wrap bar">
+  <a class="logo" href="#"><span class="m"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c4 3 6 6 6 9a6 6 0 0 1-12 0c0-3 2-6 6-9z" fill="#FFC83D"/><path d="M12 9v12" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></span><span>Зелёная долина<small>семейный парк</small></span></a>
+  <nav class="links"><a href="#fun">Развлечения</a><a href="#tickets">Билеты</a><a href="#promo">Акции</a><a href="#bday">Дни рождения</a><a href="#cafe">Кафе</a><a href="#where">Как добраться</a></nav>
+  <a class="cta" href="#tickets">Билеты</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>Целый день <span>приключений</span> для всей семьи</h1>
+  <p class="lead">Зоопарк, колесо обозрения, крытый игровой городок и кафе. Откройте страницу дома и приезжайте, уже зная, куда идти сначала.</p>
+  <div class="chips"><span class="chip">🕙 Каждый день <b>10:00–22:00</b></span><span class="chip">🐴 40+ животных</span><span class="chip">☔ Крытый городок</span></div>
+  <div class="btns"><a class="btn o" href="#tickets">Цены на билеты →</a><a class="btn w" href="#where">Как добраться</a></div>
+  <svg class="scene" viewBox="0 0 800 220" aria-hidden="true">
+    <circle cx="690" cy="52" r="30" fill="#FFC83D"/>
+    <path d="M0 170 Q120 110 250 150 T520 140 T800 150 V220 H0z" fill="#9FCF8E"/>
+    <path d="M0 190 Q160 150 330 182 T640 172 T800 182 V220 H0z" fill="#6DB063"/>
+    <g transform="translate(560 30)" stroke="#2F6B3A" stroke-width="4" fill="none"><circle cx="70" cy="70" r="62"/><circle cx="70" cy="70" r="8" fill="#2F6B3A"/><path d="M70 8v124M8 70h124M26 26l88 88M114 26l-88 88"/><path d="M70 70 40 150M70 70l30 80" stroke-width="6"/></g>
+    <g fill="#F07A2A"><rect x="551" y="22" width="18" height="14" rx="4"/><rect x="611" y="4" width="18" height="14" rx="4"/><rect x="671" y="22" width="18" height="14" rx="4"/><rect x="551" y="134" width="18" height="14" rx="4" fill="#FFC83D"/><rect x="691" y="80" width="18" height="14" rx="4" fill="#FFC83D"/></g>
+    <g transform="translate(120 118)"><ellipse cx="40" cy="30" rx="34" ry="20" fill="#8C6A4E"/><circle cx="78" cy="14" r="14" fill="#8C6A4E"/><path d="M74 0l-4-14M84 0l6-13" stroke="#8C6A4E" stroke-width="6" stroke-linecap="round"/><path d="M18 46v20M34 48v20M50 48v20M64 46v20" stroke="#6E5039" stroke-width="7" stroke-linecap="round"/><circle cx="82" cy="12" r="2.5" fill="#1F2B1C"/></g>
+    <g transform="translate(300 96)"><path d="M0 70 L40 10 L80 70z" fill="#F07A2A"/><rect x="10" y="70" width="60" height="44" fill="#FFF3D6"/><rect x="32" y="84" width="16" height="30" fill="#2F6B3A"/></g>
+  </svg>
+</div></div>
+
+<main>
+<section id="fun"><div class="wrap">
+  <div class="eyebrow">Развлечения</div>
+  <h2>Что посмотреть и попробовать</h2>
+  <p class="sub">У каждого: для какого возраста и сколько стоит. Выберите, что подходит вашим детям.</p>
+  <div class="filters" role="group" aria-label="Фильтр">
+    <button class="f" data-f="all" aria-pressed="true">Все</button>
+    <button class="f" data-f="kids" aria-pressed="false">Для малышей</button>
+    <button class="f" data-f="active" aria-pressed="false">Активные</button>
+    <button class="f" data-f="animals" aria-pressed="false">Животные</button>
+    <button class="f" data-f="rain" aria-pressed="false">Если дождь</button>
+  </div>
+  <div class="grid" id="fungrid"></div>
+</div></section>
+
+<section id="tickets"><div class="wrap">
+  <div class="eyebrow">Билеты</div>
+  <h2>Цены без звонков</h2>
+  <p class="sub">Администратор меняет цены сам за минуту, и на странице всегда актуально.</p>
+  <div class="tickets">
+    <div class="tk"><div><h3>Детский</h3><p>от 3 до 12 лет · зоопарк и площадки</p></div><div class="price">450 ₽</div></div>
+    <div class="tk"><div><h3>Взрослый</h3><p>зоопарк и прогулка по парку</p></div><div class="price">300 ₽</div></div>
+    <div class="tk vip"><div><h3>Детский VIP ⭐</h3><p>все аттракционы без ограничений, взрослый проходит бесплатно</p></div><div class="price">1 200 ₽</div></div>
+  </div>
+</div></section>
+
+<section id="promo"><div class="wrap">
+  <div class="eyebrow">Акции месяца</div>
+  <h2>Выгодно в октябре</h2>
+  <div class="promo">
+    <div class="pr a"><h3>Осенние каникулы: 2 часа в городке по цене одного</h3><p>По будням с 10:00 до 14:00, для детей до 10 лет.</p><span class="till">до 8 ноября</span></div>
+    <div class="pr b"><h3>Именинникам вход бесплатно</h3><p>В день рождения и три дня после, с документом.</p><span class="till">всегда</span></div>
+    <div class="pr c"><h3>Покормите оленей вместе с нами</h3><p>Каждую субботу в 12:00 экскурсия с работником зоопарка.</p><span class="till">по субботам</span></div>
+  </div>
+</div></section>
+
+<section id="bday"><div class="wrap">
+  <div class="bday"><div class="bwrap">
+    <div>
+      <div class="eyebrow" style="color:var(--sun)">Дни рождения</div>
+      <h2>Праздник, который ребёнок запомнит</h2>
+      <p class="sub">Выберите программу и оставьте заявку. Администратор перезвонит, подтвердит дату и всё уточнит.</p>
+      <div class="pk" id="pk">
+        <label><input type="radio" name="pk" value="Мини" checked><div><b>Мини</b><span>зоопарк, игровая комната, торт</span></div><em>от 6 000 ₽</em></label>
+        <label><input type="radio" name="pk" value="Приключение"><div><b>Приключение</b><span>аниматор, квест по парку, катание на пони</span></div><em>от 12 000 ₽</em></label>
+        <label><input type="radio" name="pk" value="Всё включено"><div><b>Всё включено</b><span>VIP-билеты, банкет в кафе, шоу мыльных пузырей</span></div><em>от 20 000 ₽</em></label>
+      </div>
+    </div>
+    <div>
+      <form class="req" id="req" novalidate>
+        <input id="r-name" placeholder="Ваше имя" autocomplete="given-name" required>
+        <input id="r-phone" type="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+        <div class="row2">
+          <input id="r-date" type="date" required aria-label="Дата праздника">
+          <select id="r-kids" aria-label="Сколько детей"><option>до 5 детей</option><option selected>6–10 детей</option><option>11–15 детей</option><option>больше 15</option></select>
+        </div>
+        <label class="consent"><input id="r-ok" type="checkbox" required><span>Даю согласие на обработку персональных данных и принимаю <a href="#" onclick="return false">политику конфиденциальности</a></span></label>
+        <button class="btn" type="submit">Отправить заявку →</button>
+      </form>
+      <div class="ok" id="ok"></div>
+    </div>
+  </div></div>
+</div></section>
+
+<section id="cafe"><div class="wrap">
+  <div class="eyebrow">Кафе и доставка</div>
+  <h2>Перекусить после зоопарка</h2>
+  <div class="cafe">
+    <div class="menu">
+      <div class="mi"><div><b>Пицца «Маргарита»</b><span>30 см, любимая у детей</span></div><i>590 ₽</i></div>
+      <div class="mi"><div><b>Детский сет</b><span>наггетсы, картофель, сок</span></div><i>390 ₽</i></div>
+      <div class="mi"><div><b>Шашлык из курицы</b><span>с лавашем и овощами</span></div><i>450 ₽</i></div>
+      <div class="mi"><div><b>Блинчики со сгущёнкой</b><span>3 штуки</span></div><i>220 ₽</i></div>
+    </div>
+    <div class="deliv"><h3>Доставка по району 🚗</h3><p>Заказ уходит прямо в Telegram кафе. Гостю не нужно звонить и диктовать заказ.</p><a class="btn tg" href="#" data-toast="В вашей версии кнопка откроет Telegram доставки">Заказать в Telegram</a></div>
+  </div>
+</div></section>
+
+<section id="reviews"><div class="wrap">
+  <div class="eyebrow">Отзывы</div>
+  <h2>Что говорят семьи</h2>
+  <p class="sub">В вашей версии здесь будут отзывы из ваших сторис и с карт.</p>
+  <div class="rev">
+    <div class="rv"><div class="stars">★★★★★</div><p>Сын полчаса не отходил от осликов. Удобно, что цены посмотрели заранее и взяли VIP.</p><small>Мама Тимура, 5 лет</small></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>Отмечали день рождения дочки. Заявку оставили на сайте, перезвонили через 10 минут.</p><small>Ольга</small></div>
+    <div class="rv"><div class="stars">★★★★★</div><p>Пошёл дождь, а мы спокойно ушли в крытый городок. Дети довольны, мы тоже.</p><small>Семья Ивановых</small></div>
+  </div>
+</div></section>
+
+<section id="where"><div class="wrap">
+  <div class="eyebrow">Как добраться</div>
+  <h2>Ждём каждый день</h2>
+  <div class="where">
+    <div class="map"><svg viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="400" height="240" fill="#E7EFD9"/><path d="M-10 170 C80 150 140 190 220 160 S360 110 420 120" stroke="#fff" stroke-width="14" fill="none"/><path d="M150 -10 C160 60 180 120 220 160 S260 230 270 260" stroke="#fff" stroke-width="10" fill="none"/><rect x="40" y="30" width="70" height="50" rx="8" fill="#D3E6C2"/><rect x="290" y="30" width="80" height="60" rx="8" fill="#D3E6C2"/><circle cx="320" cy="190" r="26" fill="#CFE6F3"/><g transform="translate(220 130)"><path d="M0 -36c14 0 24 10 24 23 0 17-24 37-24 37s-24-20-24-37c0-13 10-23 24-23z" fill="#F07A2A"/><circle cy="-14" r="8" fill="#fff"/></g></svg></div>
+    <div class="info">
+      <div class="li"><span class="ic">📍</span><div><b>с. Зелёное, ул. Парковая, 1</b><span>20 минут от города, большая бесплатная парковка</span></div></div>
+      <div class="li"><span class="ic">🕙</span><div><b>Каждый день 10:00–22:00</b><span>крытый городок работает и зимой</span></div></div>
+      <div class="li"><span class="ic">📞</span><div><b>+7 (900) 000-00-00</b><span>администратор ответит на вопросы</span></div></div>
+      <div class="btns"><a class="btn o" href="#" data-toast="В вашей версии откроется маршрут в Яндекс Картах">Построить маршрут</a><a class="btn w" style="border:2px solid var(--leaf)" href="#" data-toast="В вашей версии кнопка сразу наберёт номер">Позвонить</a></div>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 «Зелёная долина» · демо-страница</span>
+  <span class="sign"><b>FOR.MI</b> designed &amp; developed by ABN · <a href="https://t.me/abanev_dev">Telegram</a></span>
+</div></footer>
+
+<div class="dock"><a class="btn w" style="border:2px solid var(--leaf)" href="#tickets">Билеты</a><a class="btn o" href="#bday">День рождения</a></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const ICON={
+  wheel:'<svg viewBox="0 0 96 96" fill="none" stroke="#2F6B3A" stroke-width="4"><circle cx="48" cy="42" r="30"/><circle cx="48" cy="42" r="5" fill="#2F6B3A"/><path d="M48 12v60M18 42h60M27 21l42 42M69 21 27 63"/><path d="M48 42 32 88M48 42l16 46" stroke-width="5"/></svg>',
+  zoo:'<svg viewBox="0 0 96 96"><ellipse cx="44" cy="58" rx="26" ry="16" fill="#8C6A4E"/><circle cx="72" cy="42" r="12" fill="#8C6A4E"/><path d="M68 30l-3-12M78 31l5-11" stroke="#8C6A4E" stroke-width="5" stroke-linecap="round"/><path d="M28 70v14M40 72v14M52 72v14M62 70v14" stroke="#6E5039" stroke-width="6" stroke-linecap="round"/><circle cx="76" cy="40" r="2.5" fill="#1F2B1C"/></svg>',
+  castle:'<svg viewBox="0 0 96 96"><path d="M14 84V40l10-10 10 10v44zM62 84V40l10-10 10 10v44z" fill="#F07A2A"/><rect x="30" y="46" width="36" height="38" fill="#FFC83D"/><path d="M42 84V68a6 6 0 0 1 12 0v16z" fill="#2F6B3A"/><path d="M24 30V14l10 5-10 5" fill="#2F6B3A"/></svg>',
+  horse:'<svg viewBox="0 0 96 96"><path d="M20 70c0-20 14-30 32-30l10-16 6 4-2 12c10 4 14 12 14 22" fill="none" stroke="#6E5039" stroke-width="7" stroke-linecap="round"/><path d="M30 70v16M70 70v16" stroke="#6E5039" stroke-width="7" stroke-linecap="round"/><circle cx="64" cy="30" r="2.5" fill="#1F2B1C"/></svg>',
+  train:'<svg viewBox="0 0 96 96"><rect x="12" y="40" width="40" height="28" rx="6" fill="#F07A2A"/><rect x="54" y="46" width="30" height="22" rx="6" fill="#4E9A4F"/><rect x="20" y="28" width="18" height="14" rx="3" fill="#2F6B3A"/><circle cx="24" cy="72" r="7" fill="#1F2B1C"/><circle cx="44" cy="72" r="7" fill="#1F2B1C"/><circle cx="62" cy="72" r="6" fill="#1F2B1C"/><circle cx="78" cy="72" r="6" fill="#1F2B1C"/></svg>',
+  tramp:'<svg viewBox="0 0 96 96"><ellipse cx="48" cy="72" rx="34" ry="8" fill="#2F6B3A"/><path d="M18 72v12M78 72v12" stroke="#2F6B3A" stroke-width="5"/><circle cx="48" cy="30" r="8" fill="#F07A2A"/><path d="M48 38v16M36 44l12-4 12 4M40 64l8-10 8 10" stroke="#F07A2A" stroke-width="5" stroke-linecap="round" fill="none"/></svg>'
+};
+const FUN=[
+  {t:"Колесо обозрения",d:"Весь парк и горы как на ладони, кабинки на 4 человека",a:"с 3 лет",p:"300 ₽",i:"wheel",bg:"#DDEFFB",new:1,f:["active"]},
+  {t:"Контактный зоопарк",d:"Ослики, олени, козы и верблюд. Кормить можно специальным кормом",a:"любой возраст",p:"входит в билет",i:"zoo",bg:"#E3F0D8",f:["kids","animals"]},
+  {t:"Крытый городок",d:"Лабиринт, горки и сухой бассейн. Работает в любую погоду",a:"от 2 до 12 лет",p:"350 ₽/час",i:"castle",bg:"#FFE1D2",f:["kids","rain","active"]},
+  {t:"Конные прогулки",d:"Круг по парку с инструктором, на пони или лошади",a:"с 4 лет",p:"500 ₽",i:"horse",bg:"#FFF1C9",f:["animals","active"]},
+  {t:"Паровозик",d:"Неспешная поездка по всему парку, 15 минут",a:"с 1 года со взрослым",p:"200 ₽",i:"train",bg:"#E7E1F6",f:["kids"]},
+  {t:"Батуты",d:"Большая сетка и детская зона для малышей",a:"с 3 лет",p:"250 ₽",i:"tramp",bg:"#DDF3EE",f:["active"]}
+];
+function renderFun(k){
+  $("#fungrid").innerHTML=FUN.filter(x=>k==="all"||x.f.includes(k)).map(x=>`<article class="card"><div class="pic" style="background:${x.bg}">${x.new?'<span class="tag new">Новинка</span>':""}${ICON[x.i]}</div><div class="cb"><h3>${x.t}</h3><p>${x.d}</p><div class="meta"><span class="age">${x.a}</span><span class="price">${x.p}</span></div></div></article>`).join("");
+}
+renderFun("all");
+document.querySelector(".filters").addEventListener("click",e=>{const b=e.target.closest(".f");if(!b)return;document.querySelectorAll(".f").forEach(x=>x.setAttribute("aria-pressed",x===b));renderFun(b.dataset.f)});
+
+/* телефон: +7 (XXX) XXX-XX-XX, не больше 10 цифр после +7 */
+const fmtPhone=v=>{const dg=x=>x.replace(/\D/g,"");let p;if(v.trim().startsWith("+7"))p=dg(v.trim().slice(2));else{p=dg(v);if(!p)return "";if(/^[78]/.test(p))p=p.slice(1)}if(p.length>10&&/^[78]/.test(p))p=p.slice(1);p=p.slice(0,10);let s="+7";if(p.length)s+=" ("+p.slice(0,3);if(p.length>3)s+=") "+p.slice(3,6);if(p.length>6)s+="-"+p.slice(6,8);if(p.length>8)s+="-"+p.slice(8,10);return s};
+const tel=$("#r-phone");
+tel.addEventListener("input",()=>{tel.value=fmtPhone(tel.value)});
+tel.addEventListener("focus",()=>{if(!tel.value)tel.value="+7 ("});
+tel.addEventListener("blur",()=>{if(tel.value.replace(/\D/g,"").length<=1)tel.value=""});
+const d=new Date();d.setDate(d.getDate()+1);$("#r-date").min=d.toISOString().slice(0,10);
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#req").addEventListener("submit",e=>{
+  e.preventDefault();
+  const name=$("#r-name"),date=$("#r-date"),ok=$("#r-ok");
+  [name,tel,date,ok].forEach(x=>x.setCustomValidity(""));
+  if(!name.value.trim()){name.setCustomValidity("Как вас зовут?");name.reportValidity();return}
+  if(tel.value.replace(/\D/g,"").length!==11){tel.setCustomValidity("Введите номер полностью: 10 цифр после +7");tel.reportValidity();return}
+  if(!date.value){date.setCustomValidity("Выберите дату праздника");date.reportValidity();return}
+  if(!ok.checked){ok.setCustomValidity("Нужно согласие на обработку данных");ok.reportValidity();return}
+  const pk=document.querySelector('input[name="pk"]:checked').value;
+  const dt=new Date(date.value).toLocaleDateString("ru-RU",{day:"numeric",month:"long"});
+  $("#req").style.display="none";
+  $("#ok").style.display="block";
+  $("#ok").innerHTML=`<b>Заявка отправлена 🎉</b><p style="margin-top:6px">${esc(name.value.trim())}, спасибо! Программа «${pk}», ${dt}, ${$("#r-kids").value}. Администратор перезвонит и подтвердит дату.</p><p style="margin-top:8px;color:var(--soft);font-size:14px">В вашей версии такая заявка сразу приходит администратору в Telegram.</p>`;
+});
+let tt;document.addEventListener("click",e=>{const a=e.target.closest("[data-toast]");if(!a)return;e.preventDefault();const t=$("#toast");t.textContent=a.dataset.toast;t.style.display="block";clearTimeout(tt);tt=setTimeout(()=>t.style.display="none",2400)});
+</script>
+</body>
+</html>
